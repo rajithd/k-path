@@ -9,11 +9,11 @@ body {
 	height: 92px;
 	position: relative;
 	display: block;
-	background-color: #006600;
+	background-color: #28a4c9;
 }
 
 #header h1 a {
-	color: #ccff99;
+	color: #245269;
 	text-decoration: none;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 a {
-	color: #006600;
+	color: ##28a4c9;
 }
 
 ul.menu li {
@@ -106,7 +106,7 @@ div.accountConnection {
 	margin: 10px;
 	width: 600px;
 	background-color: #ffffff;
-	border: 1px solid #006600;
+	border: 1px solid ##28a4c9;
 }
 
 div.accountConnection h4 {
