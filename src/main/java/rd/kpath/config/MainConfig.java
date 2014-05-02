@@ -21,16 +21,11 @@ import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.datasource.init.DatabasePopulator;
-import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
-import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import rd.kpath.account.JdbcAccountRepository;
 
 import javax.sql.DataSource;
 
@@ -53,12 +48,6 @@ public class MainConfig {
         dataSource.setUsername("root");
         dataSource.setPassword("123");
         return dataSource;
-
-//		EmbeddedDatabaseFactory factory = new EmbeddedDatabaseFactory();
-//		factory.setDatabaseName("spring-social-showcase");
-//		factory.setDatabaseType(EmbeddedDatabaseType.H2);
-//		factory.setDatabasePopulator(databasePopulator());
-//		return factory.getDatabase();
 	}
 	
 	@Bean
@@ -74,15 +63,5 @@ public class MainConfig {
 	@Bean
 	public PropertySourcesPlaceholderConfigurer propertyPlaceHolderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
-	}
-	
-	// internal helpers
-
-	private DatabasePopulator databasePopulator() {
-		ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-		populator.addScript(new ClassPathResource("JdbcUsersConnectionRepository.sql", JdbcUsersConnectionRepository.class));
-		populator.addScript(new ClassPathResource("Account.sql", JdbcAccountRepository.class));
-		populator.addScript(new ClassPathResource("data.sql", JdbcAccountRepository.class));
-		return populator;
 	}
 }
