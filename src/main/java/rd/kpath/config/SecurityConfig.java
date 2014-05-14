@@ -38,7 +38,7 @@ import javax.sql.DataSource;
 
 /**
  * Security Configuration.
- * @author Craig Walls
+ * @author rajith
  */
 @Configuration
 @EnableWebSecurity

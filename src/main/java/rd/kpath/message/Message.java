@@ -17,8 +17,7 @@ package rd.kpath.message;
 
 /**
  * A message to display to the user.
- * Has a type indicating the kind of message.
- * @author Keith Donald
+ * @author rajith
  */
 public final class Message {
 	

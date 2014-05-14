@@ -31,8 +31,7 @@ import javax.sql.DataSource;
 
 /**
  * Main configuration class for the application.
- * Turns on @Component scanning, loads externalized application.properties, and sets up the database.
- * @author Craig Walls
+ * @author rajith
  */
 @Configuration
 @ComponentScan(basePackages = "rd.kpath", excludeFilters = { @Filter(Configuration.class) })

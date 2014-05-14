@@ -24,6 +24,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
+/**
+ * Responsible for facebook photos related services
+ */
 @Controller
 public class FacebookPhotosController {
 
@@ -34,12 +37,23 @@ public class FacebookPhotosController {
 		this.facebook = facebook;
 	}
 
+    /**
+     * Get all album related details. Tags friends and so on
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/facebook/albums", method= RequestMethod.GET)
 	public String showAlbums(Model model) {
 		model.addAttribute("albums", facebook.mediaOperations().getAlbums());
 		return "facebook/albums";
 	}
-	
+
+    /**
+     * Get individual album by id
+     * @param albumId
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/facebook/album/{albumId}", method= RequestMethod.GET)
 	public String showAlbum(@PathVariable("albumId") String albumId, Model model) {
 		model.addAttribute("album", facebook.mediaOperations().getAlbum(albumId));

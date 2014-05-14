@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
+/**
+ * Responsible for linkedin related services
+ */
 @Controller
 public class LinkedInConnectionsController {
 
@@ -18,7 +21,12 @@ public class LinkedInConnectionsController {
 	public LinkedInConnectionsController(LinkedIn linkedIn) {
 		this.linkedIn = linkedIn;
 	}
-		
+
+    /**
+     * Get first degree and second degree connections
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/linkedin/connections", method= RequestMethod.GET)
 	public String connections(Model model) {
 		NetworkStatistics statistics = linkedIn.connectionOperations().getNetworkStatistics();

@@ -33,7 +33,7 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 /**
  * Spring MVC Configuration.
  * 
- * @author Craig Walls
+ * @author rajith
  */
 @Configuration
 @EnableWebMvc

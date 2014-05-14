@@ -23,6 +23,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
+/**
+ * Responsible for facebook feed related services
+ */
 @Controller
 public class FacebookFeedController {
 
@@ -33,12 +36,22 @@ public class FacebookFeedController {
 		this.facebook = facebook;
 	}
 
+    /**
+     * Get all feeds
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/facebook/feed", method= RequestMethod.GET)
 	public String showFeed(Model model) {
 		model.addAttribute("feed", facebook.feedOperations().getFeed());
 		return "facebook/feed";
 	}
-	
+
+    /**
+     * Post a feed into wall
+     * @param message
+     * @return
+     */
 	@RequestMapping(value="/facebook/feed", method= RequestMethod.POST)
 	public String postUpdate(String message) {
 		facebook.feedOperations().updateStatus(message);

@@ -17,7 +17,7 @@ package rd.kpath.message;
 
 /**
  * Enumeration of Message types.
- * @author Keith Donald
+ * @author rajith
  */
 public enum MessageType {
 	

@@ -26,12 +26,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.inject.Inject;
 import java.security.Principal;
 
+/**
+ * Responsible for linkdin profile related services
+ */
 @Controller
 public class LinkedInProfileController {
 
 	@Inject
 	private ConnectionRepository connectionRepository;
-	
+
+    /**
+     * Get profile related connection
+     * @param currentUser
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/linkedin", method= RequestMethod.GET)
 	public String home(Principal currentUser, Model model) {
 		Connection<LinkedIn> connection = connectionRepository.findPrimaryConnection(LinkedIn.class);

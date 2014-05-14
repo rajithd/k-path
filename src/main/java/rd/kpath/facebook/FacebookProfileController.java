@@ -25,12 +25,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
+/**
+ * Responsible for facebook profile related services
+ */
 @Controller
 public class FacebookProfileController {
 	
 	@Inject
 	private ConnectionRepository connectionRepository;
 
+    /**
+     * Get facebook connection from database
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/facebook", method= RequestMethod.GET)
 	public String home(Model model) {
 		Connection<Facebook> connection = connectionRepository.findPrimaryConnection(Facebook.class);

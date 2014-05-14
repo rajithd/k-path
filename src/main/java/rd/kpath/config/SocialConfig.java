@@ -49,9 +49,8 @@ import javax.sql.DataSource;
 
 /**
  * Spring Social Configuration.
- * This configuration is demonstrating the use of the simplified Spring Social configuration options from Spring Social 1.1.
- * 
- * @author Craig Walls
+ *
+ * @author rajith
  */
 @Configuration
 @EnableSocial

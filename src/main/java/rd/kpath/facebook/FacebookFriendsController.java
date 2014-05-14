@@ -23,6 +23,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.inject.Inject;
 
+/**
+ * Responsible for facebook friends related services
+ */
 @Controller
 public class FacebookFriendsController {
 
@@ -33,6 +36,11 @@ public class FacebookFriendsController {
 		this.facebook = facebook;
 	}
 
+    /**
+     * Get all facebook friends
+     * @param model
+     * @return
+     */
 	@RequestMapping(value="/facebook/friends", method= RequestMethod.GET)
 	public String showFeed(Model model) {
 		model.addAttribute("friends", facebook.friendOperations().getFriendProfiles());
