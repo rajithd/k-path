@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:kpath="http://www.rajith.com/kpath#"
+         xml:base="http://www.rajith.com/kpath/request">
+
+   <!-- here is what I am looking for -->
+ 
+   <kpath:Digital rdf:ID="kpath">
+ 
+      <kpath:experience rdf:datatype="http://www.rajith.com/kpath#years">6.0</kpath:experience>
+
+      <kpath:area rdf:datatype="http://www.rajith.com/kpath#area">Information Technology</kpath:area>
+
+      <kpath:speciality rdf:datatype="http://www.rajith.com/kpath#speciality">Software Engineer</kpath:speciality>    
+ 
+   </kpath:Digital>
+ 
+</rdf:RDF>

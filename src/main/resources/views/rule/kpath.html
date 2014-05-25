@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>K-Path</title>
+</head>
+<body>
+<div id="content" layout:fragment="content">
+    <h3>K-Path</h3>
+    <ul class="friends">
+        <li th:each="connection : ${connections}">
+            <img th:src="${connection.profilePictureUrl}" align="middle"/><span th:text="${connection.firstName}"></span> <span th:text="${connection.lastName}"></span> <span th:text="${connection.industry}"></span></li>
+    </ul>
+
+
+</div>
+</body>
+</html>
